@@ -106,7 +106,7 @@ jobs:
 
       - name: Download and validate IPA
         run: |
-          wget "${{ github.event.inputs.ipa_url }}" --no-verbose -O youtube.ipa
+          wget "https://filebin.net/zml9oddzneog0eww/com.google.ios.youtube_21.22.04_und3fined.ipa" --no-verbose -O youtube.ipa
           file_type=$(file --mime-type -b youtube.ipa)
           if [[ "$file_type" != "application/x-ios-app" && "$file_type" != "application/zip" ]]; then
             echo "::error::Validation failed: The downloaded file is not a valid IPA. Detected type: $file_type."
